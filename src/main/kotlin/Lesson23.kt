@@ -42,12 +42,53 @@
 //        list.add(element)
 //    }
 //}
+class Box<T> {
+    private var item: T? = null
 
+    fun addItem(element: T) {
+        item = element
+    }
+
+    fun getItem(): T? {
+        return item
+    }
+}
+
+//fun main() {
+//    // Пример использования класса Box
+//    val intBox = Box<Int>()
+//    intBox.addItem(42)
+//    val intValue = intBox.getItem()
+//    println("Значение в intBox: $intValue")
+//
+//    val stringBox = Box<String>()
+//    stringBox.addItem("Hello, Box!")
+//    val stringValue = stringBox.getItem()
+//    println("Значение в stringBox: $stringValue")
+//}
 //1. Напишите функцию printList, которая принимает список любого типа и печатает каждый элемент списка.
-fun <T> printList(list: List<T>){
-    for (element in list){
+//fun <T> printList(list: List<T>){
+//    for (element in list){
+//        println(element)
+//    }
+//}
+
+fun <T> printList(list: List<T>) {
+    for (element in list) {
         println(element)
     }
+}
+
+fun main() {
+    // Пример использования функции printList
+    val intList = listOf(1, 2, 3, 4, 5)
+    val stringList = listOf("apple", "banana", "orange")
+
+    println("Элементы в списке intList:")
+    printList(intList)
+
+    println("\nЭлементы в списке stringList:")
+    printList(stringList)
 }
 //2. Создайте класс Pair, который принимает два объекта любого типа и сохраняет их внутри класса.
 // Реализуйте методы для получения каждого из элементов.
